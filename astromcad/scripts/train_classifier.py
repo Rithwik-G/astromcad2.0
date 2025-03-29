@@ -1,5 +1,5 @@
-from utils import *
-from load_data import *
+from utils.utils import *
+from utils.load_data import *
 from astromcad import *
 
 
