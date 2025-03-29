@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: astromcad
+Version: 1.2.6
+Summary: Classifier-Based Anomaly Detection for Astronomical Transients
+Author: Rithwik Gupta
+Author-email: <rithwikca2020@gmail.com>
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
