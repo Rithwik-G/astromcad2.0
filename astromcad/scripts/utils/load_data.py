@@ -1,12 +1,13 @@
-from utils import *
+from astromcad.scripts.utils.utils import *
+
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 
 def load_data():
-    target = load("../../../../data/target_cls")
-    x_data = load("../../../../data/x_data")
-    host_galaxy_info = load("../../../../data/host_galaxy_info")
+    target = load("../../data/target_cls")
+    x_data = load("../../data/x_data")
+    host_galaxy_info = load("../../data/host_galaxy_info")
     return x_data, host_galaxy_info, target
 
 
@@ -126,4 +127,4 @@ def get_data():
     x_data_anom = np.array(x_data_anom)
     host_gal_anom = np.array(host_gal_anom)
     y_data_anom = np.squeeze(y_data_anom)
-    return X_train, X_val, X_test, host_gal_train, host_gal_val, host_gal_test, y_train, y_val, y_test, class_weights, ntimesteps
+    return X_train, X_val, X_test, host_gal_train, host_gal_val, host_gal_test, y_train, y_val, y_test, class_weights, ntimesteps, x_data_anom, host_gal_anom, y_data_anom  

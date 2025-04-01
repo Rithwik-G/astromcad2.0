@@ -7,8 +7,9 @@ import numpy as np
 import os
 from sklearn.ensemble import IsolationForest
 import pickle
+import pandas as pd
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 
 def load(file_name):
     with open(file_name, 'rb') as f:
@@ -69,6 +70,18 @@ class mcad:
     def score_discrete(self, data):
         return self.mcif.score_discrete(self.encode(data))
 
+    def generate_score_csv(self, data, file_path, y=None):
+        print(f"Saving scores to: {file_path}")
+        scores = self.score(data)
+        print("Generated Scores")
+        with open(file_path, 'w') as f:
+            ids = range(len(scores))
+            if y is not None:
+                df = pd.DataFrame({'obj_id': ids, 'score': scores, 'class': y})
+            else:
+                df = pd.DataFrame({'obj_id': ids, 'score': scores})
+            df.to_csv(f, index=False)
+
 class Detect:
     ntimesteps=656
     classes = ['SNIa', 'SNIa-91bg', 'SNIax', 'SNIb', 'SNIc', 'SNIc-BL', 'SNII', 'SNIIn', 'SNIIb', 'TDE', 'SLSN-I', 'AGN']
@@ -109,6 +122,10 @@ class Detect:
     def score_discrete(cls, data):
         discrete_scores = cls.anomaly_detector.score_discrete(data)
         return discrete_scores
+
+    @classmethod
+    def generate_score_csv(cls, data, file_path, y=None):
+        cls.anomaly_detector.generate_score_csv(data, file_path, y)
 
 
 
