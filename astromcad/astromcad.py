@@ -317,7 +317,7 @@ def plot_recall(maj_scores, anom_scores, title="Anomalies Detected by Index"):
 
     # Guessing line
     x = np.array(range(0,2000))
-    y = 1/220 * x
+    y = len(minority) / (len(majority) + len(minority)) * x
     plt.plot(x, y, label='Guessing', linestyle='dashed', color='grey')
 
     ax.plot(range(0, 2000), [i / len(anom_scores) for i in prefix_sum[1:]], color='orange', label='Model')

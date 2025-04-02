@@ -19,10 +19,10 @@ if __name__ == '__main__':
     
     print("Training")
     # history = train(model, X_train, y_train, X_val, y_val, class_weights, epochs=40)
-    # history = train(model, X_train, host_gal_train, y_train, X_val, host_gal_val, y_val, class_weights, epochs=40)
+    history = train_contextual(model, X_train, host_gal_train, y_train, X_val, host_gal_val, y_val, class_weights, epochs=40)
     
     # model.save(os.path.join(script_dir, "Models/NoHostClassifier.h5"))
-    # model.save(os.path.join(script_dir, "Models/HostClassifier.h5"))
+    model.save(os.path.join(script_dir, "Models/HostClassifier.h5"))
     
     print("Model Saved")
 

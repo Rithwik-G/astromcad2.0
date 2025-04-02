@@ -6,7 +6,7 @@ import os
 #     long_description = fh.read();
 
 
-VERSION = '1.2.7'
+VERSION = '1.2.8'
 
 DESCRIPTION = 'Classifier-Based Anomaly Detection for Astronomical Transients'
 # LONG_DESCRIPTION = long_description
