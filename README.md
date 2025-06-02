@@ -1,6 +1,6 @@
 # astromcad2.0
 
-Rebuilt version of [my anomaly detection research](https://github.com/Rithwik-G/astromcad)
+Rebuilt version of our [anomaly detection research](https://github.com/Rithwik-G/astromcad)
 
 # Multi-Class Anomaly Detection for Astronomical Transients
 
